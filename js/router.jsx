@@ -17,7 +17,7 @@ var Router = React.createClass({
 
   render: function () {
     return (
-      <Routes location="hash">
+      <Routes location="history">
         <Route name="app" path="/" handler={App}>
           <Route name="home" handler={HomeView} />
           <Route name="about" handler={AboutView} />
