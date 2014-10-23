@@ -13,7 +13,7 @@ var HomeView     = require("./components/views/home.jsx");
 var StuffView    = require("./components/views/stuff.jsx");
 
 React.renderComponent((
-  <Routes location="location">
+  <Routes location="history">
     <Route name="app" path="/" handler={App}>
       <Route name="home" handler={HomeView} />
       <Route name="stuff" handler={StuffView} />
