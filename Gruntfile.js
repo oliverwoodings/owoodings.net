@@ -14,18 +14,18 @@ module.exports = function (grunt) {
       }
     },
     browserify: {
-      dist: {
+      dev: {
         files: {
-          "build/app.js": ["js/app.js"]
+          "build/app.js": ["js/main.js"]
         },
         options: {
-          transform: ["node-lessify"]
+          transform: ["reactify"]
         }
       }
     },
     watch: {
       src: {
-        files: ["js/**/*.js", "less/**/*.less"],
+        files: ["js/**/*.js", "less/**/*.less", "public/**/*.html"],
         tasks: ["build"],
         options: {
           livereload: {
@@ -35,12 +35,25 @@ module.exports = function (grunt) {
       }
     },
     connect: {
-      server: {
+      dev: {
         options: {
           port: 8000,
           base: "./build",
           livereload: 9000
         }
+      }
+    },
+    less: {
+      dev: {
+        files: {
+          "build/styles.css": "less/main.less"
+        }
+      }
+    },
+    autoprefixer: {
+      dev: {
+        src: "build/styles.css",
+        dest: "build/styles.css"
       }
     }
   });
@@ -50,8 +63,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-rm");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-connect");
+  grunt.loadNpmTasks("grunt-contrib-less");
+  grunt.loadNpmTasks("grunt-autoprefixer");
 
-  grunt.registerTask("build", ["rm:build", "browserify:dist", "copy:build"]);
-  grunt.registerTask("default", ["connect", "watch"]);
+  grunt.registerTask("build", ["rm:build", "browserify:dev", "less:dev", "autoprefixer:dev", "copy:build"]);
+  grunt.registerTask("default", ["connect:dev", "watch:src"]);
 
 };

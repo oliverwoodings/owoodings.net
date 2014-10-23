@@ -1,7 +1,7 @@
 #tabs {
   height: 25px;
-  width: 800px;
-  background: rgb(28, 31, 38);
+  width: 100%;
+  background: @color-block-darkest;
 
   #tab-list {
     list-style: none;
@@ -10,7 +10,7 @@
       float: left;
       width: 105px;
       padding: 0 7px 0 8px;
-      color: rgb(101, 115, 127);
+      color: @color-font-inactive;
       line-height: 25px;
       font-size: 12px;
       cursor: pointer;
@@ -18,13 +18,13 @@
       background-size: 16px 16px;
 
       &:hover {
-        color: rgb(192, 197, 206);
+        color: @color-font-hover;
         background-image: url("/images/circle-white.png");
       }
 
       &.state-active, &.state-active:hover {
-        color: rgb(223, 225, 232);
-        background-color: rgb(43, 48, 59);
+        color: @color-font-inactive;
+        background-color: @color-block-medium;
         background-image: url("/images/circle-yellow.png");
       }
     }
