@@ -8,7 +8,6 @@ var TabBar = React.createClass({
     return (
       <div className="tab-bar">
         <Tab to="home" title="home.js" />
-        <Tab to="about" title="about.js" />
         <Tab to="stuff" title="stuff.js" />
       </div>
     );

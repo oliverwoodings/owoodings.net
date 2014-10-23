@@ -17,7 +17,7 @@ module.exports = function (grunt) {
           "build/app.js": ["js/main.jsx"]
         },
         options: {
-          transform: ["reactify"]
+          transform: ["reactify", "brfs"]
         }
       }
     },
