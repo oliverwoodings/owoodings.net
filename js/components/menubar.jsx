@@ -11,7 +11,7 @@ var MenuBar = React.createClass({
         </ul>
         <div id="menubar-title">
           <span id="menubar-title-icon">owoodings.net &mdash;</span>
-          <span id="menubar-subtitle">home.js</span>
+          <span id="menubar-subtitle"> home.js</span>
         </div>
       </div>
     );

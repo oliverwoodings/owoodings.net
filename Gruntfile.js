@@ -1,10 +1,8 @@
 module.exports = function (grunt) {
 
   grunt.initConfig({
-    rm: {
-      build: {
-        dir: "build"
-      }
+    clean: {
+      build: ["build"]
     },
     copy: {
       build: {
@@ -60,13 +58,13 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks("grunt-browserify");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-rm");
+  grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-contrib-less");
   grunt.loadNpmTasks("grunt-autoprefixer");
 
-  grunt.registerTask("build", ["rm:build", "browserify:dev", "less:dev", "autoprefixer:dev", "copy:build"]);
+  grunt.registerTask("build", ["clean:build", "browserify:dev", "less:dev", "autoprefixer:dev", "copy:build"]);
   grunt.registerTask("default", ["connect:dev", "watch:src"]);
 
 };
