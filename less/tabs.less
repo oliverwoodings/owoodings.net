@@ -1,0 +1,32 @@
+#tabs {
+  height: 25px;
+  width: 800px;
+  background: rgb(28, 31, 38);
+
+  #tab-list {
+    list-style: none;
+
+    li {
+      float: left;
+      width: 105px;
+      padding: 0 7px 0 8px;
+      color: rgb(101, 115, 127);
+      line-height: 25px;
+      font-size: 12px;
+      cursor: pointer;
+      background: no-repeat 100px center;
+      background-size: 16px 16px;
+
+      &:hover {
+        color: rgb(192, 197, 206);
+        background-image: url("/images/circle-white.png");
+      }
+
+      &.state-active, &.state-active:hover {
+        color: rgb(223, 225, 232);
+        background-color: rgb(43, 48, 59);
+        background-image: url("/images/circle-yellow.png");
+      }
+    }
+  }
+}
