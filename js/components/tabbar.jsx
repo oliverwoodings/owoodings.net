@@ -6,7 +6,7 @@ var TabBar = React.createClass({
 
   render: function() {
     return (
-      <div className="tabs">
+      <div className="tab-bar">
         <Tab to="home" title="home.js" />
         <Tab to="about" title="about.js" />
         <Tab to="stuff" title="stuff.js" />

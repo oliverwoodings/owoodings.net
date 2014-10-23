@@ -1,0 +1,34 @@
+.tab-bar {
+  height: 25px;
+  width: 100%;
+  background: @color-block-darkest;
+
+  .tab {
+    float: left;
+    width: 105px;
+    padding: 0 7px 0 8px;
+    color: @color-font-inactive;
+    line-height: 25px;
+    font-size: 12px;
+    cursor: pointer;
+    background: no-repeat 100px center;
+    background-size: 16px 16px;
+    text-decoration: none;
+
+    &:hover {
+      color: @color-font-hover;
+      background-image: url("/images/circle-white.png");
+    }
+
+    &.active, &.active:hover {
+      color: @color-font-active;
+      background-color: @color-block-medium;
+      background-image: url("/images/circle-yellow.png");
+    }
+
+    &:first-child {
+      margin-left: 20px;
+    }
+  }
+
+}
