@@ -12,6 +12,8 @@ var NotFoundView = require("./components/views/notfound.jsx");
 var HomeView     = require("./components/views/home.jsx");
 var StuffView    = require("./components/views/stuff.jsx");
 
+window.React = React;
+
 React.renderComponent((
   <Routes location="history">
     <Route name="app" path="/" handler={App}>
