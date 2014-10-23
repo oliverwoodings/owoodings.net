@@ -16,7 +16,7 @@ module.exports = function (grunt) {
     browserify: {
       dev: {
         files: {
-          "build/app.js": ["js/main.js"]
+          "build/app.js": ["js/main.jsx"]
         },
         options: {
           transform: ["reactify"]
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
     },
     watch: {
       src: {
-        files: ["js/**/*.js", "less/**/*.less", "public/**/*.html"],
+        files: ["js/**/*.js", "js/**/*.jsx", "less/**/*.less", "public/**/*.html"],
         tasks: ["build"],
         options: {
           livereload: {
